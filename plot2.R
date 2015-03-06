@@ -1,4 +1,7 @@
 ## Getting full dataset
+if (!file.exists("household_power_consumption.txt")) {
+        untar("household_power_consumption.tar.gz")
+}
 sourceData <- "./household_power_consumption.txt";
 fullData <- read.csv(sourceData, header=TRUE, sep=';', na.strings="?", dec=".",
                       check.names=FALSE, stringsAsFactors=F)
